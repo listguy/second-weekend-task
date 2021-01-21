@@ -87,7 +87,7 @@ let object1 = {
     object['objectsFinishedPercent'] = Math.floor((object.objectsFinished / object.objectsGiven) * 100); object['finishedAt'] = object.finishedAt.toLocaleTimeString();
     object['startedAt'] = object.startedAt.toLocaleTimeString();
   }
-    let allObjectsArr = ['Started At', 'Finished At', 'Total Time', 'Objects Given', 'Objects Finished','Objects Finished %', 'Topic'];
+    let allObjectsArr = ['Started At', 'Finished At', 'Total Time', 'Objects Given','Topic', 'Objects Finished','Objects Finished %'];
 
     document.write('<table><tr>');
 
