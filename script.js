@@ -85,13 +85,13 @@ let object1 = {
     object['totalTime'] = Math.abs(object.finishedAt - object.startedAt) / 3600000;
     object['tasksFinishedPercent'] = Math.floor((object.tasksFinished / object.tasksGiven) * 100); object['finishedAt'] = object.finishedAt.toLocaleTimeString();
     object['startedAt'] = object.startedAt.toLocaleTimeString();
-
-    let propArr = ['Started At', 'Finished At', 'Tasks Given', 'Tasks Done', 'Topic', 'Total Time', 'Tasks Finished %'];
+  }
+    let allObjectsArr = ['Started At', 'Finished At', 'Tasks Given', 'Tasks Done', 'Topic', 'Total Time', 'Tasks Finished %'];
 
     document.write('<table><tr>');
 
-    for (let prop of propArr) {
-    document.write(`<th>${prop}</th>`);
+    for (let allObjects of allObjectsArr) {
+    document.write(`<th>${allObjects}</th>`);
 }
 
 for (let object of objectArr) {
@@ -121,6 +121,7 @@ for (let object of objectArr) {
         document.write(`<td class="${className}">${object[value]}</td>`);
       }
     } else {
+        
       document.write(`<td>${object[value]}</td>`);
     }
   }
@@ -129,4 +130,3 @@ for (let object of objectArr) {
 }
 
 document.write('</table>');
-  }
