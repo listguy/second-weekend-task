@@ -1,0 +1,68 @@
+:root {
+  --bad: #ed2222;
+  --ok: #d6c807;
+  --good: #158e1b;
+  --notNuch: #6a9ee9;
+  --enough: #3576de;
+  --aLot: #001ec4;
+  --main-grey: #999999;
+  --title-grey: rgb(85, 85, 85);
+}
+
+table {
+  font-family: arial, sans-serif;
+  color: white;
+  border-collapse: collapse;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+td {
+  border: 3px solid #dddddd;
+  border-radius: 10px;
+  text-align: left;
+  padding: 8px;
+  background-color: var(--main-grey);
+}
+
+th {
+  border: 3px solid #dddddd;
+  border-radius: 10px;
+  text-align: center;
+  padding: 10px;
+  background-color: var(--title-grey);
+}
+
+.goodTime {
+  background-color: var(--good);
+}
+
+.mediumTime {
+  background-color: var(--ok);
+}
+
+.badTime {
+  background-color: var(--bad);
+}
+
+.goodArchive {
+  background-color: var(--aLot);
+}
+
+.mediunArchive {
+  background-color: var(--enough);
+}
+
+.smallArchive {
+  background-color: var(--notNuch);
+}
+
+.title {
+  font-family: "Lobster", cursive;
+  font-size: 120px;
+  margin: 10px;
+  text-align: center;
+  color: var(--title-grey);
+  text-shadow: -2px 0 red, 0 2px red, 2px 0 red, 0 -2px red;
+}
