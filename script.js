@@ -79,9 +79,54 @@ let object1 = {
     topic: "Chemistry",
   }
   
-  let objectarr = [object1, object2, object3, object4, object5, object6, object7, object8, object9, object10];
+  let objectArr = [object1, object2, object3, object4, object5, object6, object7, object8, object9, object10];
   
-  for (let object of objectarr) {
+  for (let object of objectArr) {
     object['totalTime'] = Math.abs(object.finishedAt - object.startedAt) / 3600000;
-    object['tasksFinishedPercent'] = Math.floor((object.tasksFinished / object.tasksGiven) * 100);
+    object['tasksFinishedPercent'] = Math.floor((object.tasksFinished / object.tasksGiven) * 100); object['finishedAt'] = object.finishedAt.toLocaleTimeString();
+    object['startedAt'] = object.startedAt.toLocaleTimeString();
+
+    let propArr = ['Started At', 'Finished At', 'Tasks Given', 'Tasks Done', 'Topic', 'Total Time', 'Tasks Finished %'];
+
+    document.write('<table><tr>');
+
+    for (let prop of propArr) {
+    document.write(`<th>${prop}</th>`);
 }
+
+for (let object of objectArr) {
+  document.write('<tr>');
+
+  for (let value in object) {
+    if (value === 'totalTime') {
+      if (object[value] >= 3) {
+        let className = 'alotofTime';
+        document.write(`<td class="${className}">${object[value]}</td>`);
+      } else if (object[value] >= 2) {
+        let className = 'mediumofTime';
+        document.write(`<td class="${className}">${object[value]}</td>`);
+      } else if (object[value] < 2) {
+        let className = 'alittleofTime';
+        document.write(`<td class="${className}">${object[value]}</td>`);
+      }
+    } else if (value === 'tasksFinishedPrecent') {
+      if (object[value] >= 70) {
+        let className = 'alotofWork';
+        document.write(`<td class="${className}">${object[value]}</td>`);
+      } else if (object[value] >= 50) {
+        let className = 'mediumofWork';
+        document.write(`<td class="${className}">${object[value]}</td>`);
+      } else if (object[value] < 50) {
+        let className = 'alittleofWork';
+        document.write(`<td class="${className}">${object[value]}</td>`);
+      }
+    } else {
+      document.write(`<td>${object[value]}</td>`);
+    }
+  }
+
+  document.write('</tr>');
+}
+
+document.write('</table>');
+  }
