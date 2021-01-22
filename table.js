@@ -81,24 +81,64 @@ work[9]= {
 
 for(var i = 0; i < work.length; i++){
     var totalTime =  Math.floor(((work[i].finishedAt - work[i].startedAt) / (1000 * 60 * 60)) % 24);
-    var tasksFinishedPrecent = Math.floor(work[i].tasksFinished/work[i].tasksGiven*100) + '%';
-    Object.assign(work[i], { totalTime: totalTime, tasksFinishedPrecent: tasksFinishedPrecent });
+    var tasksFinishedPercent = Math.floor(work[i].tasksFinished/work[i].tasksGiven*100);
+    Object.assign(work[i], { totalTime: totalTime, tasksFinishedPercent: tasksFinishedPercent });
 }
+
+let headers = ["Topic", "Started At", "Finished At", "Total Time Spent", "Tasks Given", "Tasks Finished", "Tasks Finished %"];    
+
+function generateTableHead(table, headers) {
+    let thead = table.createTHead();
+    let row = thead.insertRow();
+    for (var h = 0; h < headers.length; h++) 
+    {
+      let th = document.createElement("th");
+      let text = document.createTextNode(headers[h]);
+      th.appendChild(text);
+      row.appendChild(th);
+    }
+  }
+
+  function generateTable(table, data) {
+    for (let element of data) {
+      let row = table.insertRow();
+      let topicCell = row.insertCell();
+      topicCell.innerHTML = element.topic;
+      let startedCell = row.insertCell();
+      startedCell.innerHTML = element.startedAt.getHours();
+      let finishedCell = row.insertCell();
+      finishedCell.innerHTML = element.finishedAt.getHours();
+      let totalTimeCell = row.insertCell();
+      //set colour of cell based on value
+      let colorValue1 = "green";
+      if (element.totalTime > 2){
+        colorValue1 = "orange";
+      }
+      if (element.totalTime > 5){
+        colorValue1 = "red";
+      }
     
-document.write('<table>');
+      totalTimeCell.style.backgroundColor = colorValue1;
+      totalTimeCell.innerHTML = element.totalTime;
+      let tasksGivenCell = row.insertCell();
+      tasksGivenCell.innerHTML = element.tasksGiven;
+      let tasksFinishedCell = row.insertCell();
+      tasksFinishedCell.innerHTML = element.tasksFinished;
+      let tasksFinishedPercentCell = row.insertCell();
+      //set colour of cell based on value
+      let colorValue2 = "light blue";
+      if (element.taskFinishedPercent > 50){
+          colorValue2 = "blue";
+      }
+      if (element.taskFinishedPercent >= 75){
+          colorValue2 = "deep blue";
+      }
+      tasksFinishedPercentCell.style.backgroundColor = colorValue2;
+      tasksFinishedPercentCell.innerHTML = element.tasksFinishedPercent + '%';
+    }
+  }
 
-document.write(`<tr class="$(classHeader)"> 
-<th>Topic</th>
-<th>Started At</th>
-<th>Finished At</th>
-<th>Total Time Spent</th>
-<th>Tasks Given</th>
-<th>Tasks Finished</th>
-<th>Tasks Finished %</th>`);
-
-    /*for (const criterion of work[0]) {
-        // if(criterion === true){
-        //     className= 'good';
-        // }
-        // else{ className= 'bad'; 
-    }*/
+var table = document.createElement("table");
+generateTableHead(table, headers);
+generateTable(table, work);
+document.body.appendChild(table);
