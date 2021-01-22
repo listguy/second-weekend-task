@@ -8,6 +8,7 @@
   border: 0.1em solid rgb(199, 101, 35);
   font-size: 150%;
   border-radius: 8%;
+  background-color: rgb(247, 176, 77);
 }
 .tableBody {
   border: 0.1em solid rgb(199, 101, 35);
@@ -51,8 +52,23 @@
   font-weight: bolder;
   text-align: center;
   border-radius: 8%;
+  background-color: rgb(210, 116, 144);
 }
 .taskPercentMedium {
+  border: 0.1em solid rgb(199, 101, 35);
+  width: 100vh;
+  padding: 1%;
+  font-weight: bolder;
+  text-align: center;
+  border-radius: 8%;
+  background-color: rgb(150, 116, 144);
 }
 .taskPercentHigh {
+  border: 0.1em solid rgb(255, 101, 35);
+  width: 100vh;
+  padding: 1%;
+  font-weight: bolder;
+  text-align: center;
+  border-radius: 8%;
+  background-color: rgb(110, 116, 144);
 }
