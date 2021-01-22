@@ -7,6 +7,7 @@
 .tableHeader {
   border: 0.1em solid rgb(199, 101, 35);
   font-size: 150%;
+  border-radius: 8%;
 }
 .tableBody {
   border: 0.1em solid rgb(199, 101, 35);
@@ -14,4 +15,44 @@
   padding: 1%;
   font-weight: bolder;
   text-align: center;
+  border-radius: 8%;
+}
+.totalTimeLow {
+  border: 0.1em solid rgb(199, 101, 35);
+  width: 100vh;
+  padding: 1%;
+  font-weight: bolder;
+  text-align: center;
+  border-radius: 8%;
+  background-color: rgb(55, 238, 95);
+}
+.totalTimeMedium {
+  border: 0.1em solid rgb(199, 101, 35);
+  width: 100vh;
+  padding: 1%;
+  font-weight: bolder;
+  text-align: center;
+  border-radius: 8%;
+  background-color: rgb(55, 170, 95);
+}
+.totalTimeHigh {
+  border: 0.1em solid rgb(199, 101, 35);
+  width: 100vh;
+  padding: 1%;
+  font-weight: bolder;
+  text-align: center;
+  border-radius: 8%;
+  background-color: rgb(55, 110, 95);
+}
+.taskPercentLow {
+  border: 0.1em solid rgb(199, 101, 35);
+  width: 100vh;
+  padding: 1%;
+  font-weight: bolder;
+  text-align: center;
+  border-radius: 8%;
+}
+.taskPercentMedium {
+}
+.taskPercentHigh {
 }

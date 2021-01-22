@@ -16,7 +16,8 @@ function calculateTotalTime (arr) {
     let i = 0;
     for (task of arr) {
             let time = task.finishAt.getTime() - task.startedAt.getTime();
-            let totalTime = (time / (1000*3600*24));
+            console.log(time);
+            let totalTime = (time / (36e5));
             arr[i].totalTime = totalTime.toFixed(1);
             i++;
     }
@@ -56,9 +57,32 @@ for (const task of tasks) {
             let m = addZero(task[i].getMinutes());
             document.write(`<td class = "tableBody"> ${h} : ${m} </td>`)
             console.log(m);
-        } else {
-        document.write(`<td class = "tableBody"> ${task[i]} </td>`);
-        console.log(typeof(task[i]));
+        } else { 
+            if (i === 'totalTime') {
+                if (task[i] <= 25) {
+                    document.write(`<td class = "totalTimeLow"> ${task[i]} </td>`);
+                }
+                if ((task[i] > 25) && (task[i] <= 55)) {
+                    document.write(`<td class = "totalTimeMedium"> ${task[i]} </td>`);
+                }
+                if (task[i] > 55) {
+                    document.write(`<td class = "totalTimeHigh"> ${task[i]} </td>`);
+                }
+            } else {
+                if (i === 'tasksPercent') {
+                    if (parseInt(task[i]) < 80) {
+                        document.write(`<td class = "taskPercentLow"> ${task[i]} </td>`)
+                    }   
+                    if (parseInt(task[i]) >= 80 && parseInt(task[i]) < 90) {
+                        document.write(`<td class = "taskPercentMedium"> ${task[i]} </td>`)
+                    }   
+                    if (parseInt(task[i]) >= 90) {
+                        document.write(`<td class = "taskPercentHigh"> ${task[i]} </td>`)
+                    }   
+                } else {
+                    document.write(`<td class = "tableBody"> ${task[i]} </td>`);
+                }
+            }
         }
     }
     document.write('</tr>');
