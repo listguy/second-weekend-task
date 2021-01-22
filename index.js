@@ -1,4 +1,3 @@
-const date = new Date("2020");
 const tasks = [
     { topic: 'HTML', startedAt: new Date("2021-01-20 13:00") , finishAt: new Date("2021-01-21 13:30") , tasksGiven: 20, taskFinished: 18},
     { topic: 'CSS', startedAt: new Date("2021-01-20 12:00") , finishAt: new Date("2021-01-21 9:00") , tasksGiven: 20, taskFinished: 15},
@@ -11,14 +10,16 @@ const tasks = [
     { topic: 'FCC', startedAt: new Date("2021-01-28 7:00") , finishAt: new Date("2021-01-28 19:00") , tasksGiven: 19, taskFinished: 18},
     { topic: 'FUN', startedAt: new Date("2021-01-01 9:00") , finishAt: new Date("2021-01-26 9:00") , tasksGiven: 5, taskFinished: 0} 
 ];
+
 //get array and calculate the time between the start and the end of each task
 function calculateTotalTime (arr) {
     for (task of arr) {
-            let time = task.finishAt.getTime() - task.startedAt.getTime();
-            let totalTime = (time / (36e5));
-            task.totalTime = totalTime.toFixed(1);
+        let time = task.finishAt.getTime() - task.startedAt.getTime();
+        let totalTime = (time / (36e5));
+        task.totalTime = totalTime.toFixed(1);
     }
 }
+
 // get array and calculate the percent of mission complete
 function tasksPercent (arr) {
     for (task of arr) {
@@ -33,14 +34,14 @@ tasksPercent(tasks);
 // get number that presented time and if needed add '0'. 
 function addZero(t) {
     if (t < 10) {
-      t = "0" + t;
+        t = "0" + t;
     }
     return t;
   }
 
 // start build table in index.html
 document.write('<table id = table>');
-document.write('<tr id = "headeRow" >');
+document.write('<tr id = "headRow" >');
 const header = ['topic','started At', 'finish At', 'task Given', 'task Finished', 'total Time', 'task Percent' ];
 for (const head of header) {  
     document.write('<th class = "tableHeader">  ' + head + '</th>');
@@ -58,23 +59,29 @@ for (const task of tasks) {
         } else { 
             if (i === 'totalTime') {
                 if (task[i] <= 25) {
+                    // light green
                     document.write(`<td class = "totalTimeLow"> ${task[i]} </td>`);
                 }
                 if ((task[i] > 25) && (task[i] <= 55)) {
+                    //green
                     document.write(`<td class = "totalTimeMedium"> ${task[i]} </td>`);
                 }
                 if (task[i] > 55) {
+                    //dark green
                     document.write(`<td class = "totalTimeHigh"> ${task[i]} </td>`);
                 }
             } else {
                 if (i === 'tasksPercent') {
                     if (parseInt(task[i]) < 80) {
+                        //pink
                         document.write(`<td class = "taskPercentLow"> ${task[i]} </td>`)
                     }   
                     if (parseInt(task[i]) >= 80 && parseInt(task[i]) < 90) {
+                        //dark pink
                         document.write(`<td class = "taskPercentMedium"> ${task[i]} </td>`)
                     }   
                     if (parseInt(task[i]) >= 90) {
+                        //purple
                         document.write(`<td class = "taskPercentHigh"> ${task[i]} </td>`)
                     }   
                 } else {
