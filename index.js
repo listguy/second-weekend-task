@@ -1,3 +1,4 @@
+//declaration of object
 const myObj = [
     {
         startedAt: new Date('2021-01-09:09:00'),
@@ -19,7 +20,7 @@ const myObj = [
     },
     {
         startedAt: new Date('2021-01-09:09:00'),
-        finishedAt: new Date('2021-01-09:18:00'),
+        finishedAt: new Date('2021-01-09:11:30'),
         tasksGiven: '9',
         tasksFinished: '9',
         totalTime: '',
@@ -27,7 +28,7 @@ const myObj = [
         topic: 'Css'
     },
     {
-        startedAt: new Date('2021-01-09:12:00'),
+        startedAt: new Date('2021-01-09:12:30'),
         finishedAt: new Date('2021-01-09:20:00'),
         tasksGiven: '5',
         tasksFinished: '2',
@@ -54,8 +55,8 @@ const myObj = [
         topic: 'Object'
     },
     {
-        startedAt: new Date('2021-01-09:07:00'),
-        finishedAt: new Date('2021-01-09:12:00'),
+        startedAt: new Date('2021-01-09:08:30'),
+        finishedAt: new Date('2021-01-09:16:00'),
         tasksGiven: '4',
         tasksFinished: '4',
         totalTime: '',
@@ -73,7 +74,7 @@ const myObj = [
     },
     {
         startedAt: new Date('2021-01-09:09:00'),
-        finishedAt: new Date('2021-01-09:14:00'),
+        finishedAt: new Date('2021-01-09:15:30'),
         tasksGiven: '4',
         tasksFinished: '3',
         totalTime: '',
@@ -93,24 +94,28 @@ const myObj = [
 
 const table_headers = Object.keys(myObj[0]);
 let index;
-// here start the table
+
+// here start the table section
 document.write(`<table>`);
 document.write(`<tr>`);
 
+// add all the headers to the table
 for (let header of table_headers) {
     document.write(`<th scope='col'>${header} </th>`);
 };
-
 document.write(`</tr>`);
 
 for (let obj of myObj) {
+
+    //redefines the properties
     obj.totalTime = diff_hours(obj.startedAt, obj.finishedAt);
     obj.tasksFinishedPrecent = calculatePrecent(obj.tasksFinished, obj.tasksGiven);
     obj.startedAt = getTime(obj.startedAt);
     obj.finishedAt = getTime(obj.finishedAt);
     
     document.write(`<tr>`);
-    
+
+    // add all the properties to the table   
     const row_values = Object.values(obj);
     index = 0;
     for (let value of row_values) {
@@ -131,17 +136,17 @@ document.write(`</table>`);
 
 
 
-
+// function to get the difference between the hours
 function diff_hours(dt1, dt2) {
     let diff = (dt2.getTime() - dt1.getTime()) / 1000;
     diff /= (60 * 60);
-    let total = Math.abs(Math.round(diff)); 
+    let total = Math.abs(diff); 
     return total;
 } 
 
 
 
-
+//function to get precent of the tesks finished
 function calculatePrecent(num1, num2) {
     let precent = Math.floor((num1 / num2) * 100);
 
@@ -149,7 +154,7 @@ function calculatePrecent(num1, num2) {
 }
 
 
-
+// function to get the full time (00:00)
 function getTime(date) {
     let hour = date.getHours();
     let minutes = date.getMinutes();
@@ -164,7 +169,7 @@ function getTime(date) {
 
 
 
-
+//functions for changing color by value
 function getColorPrecent(number) {
     let classN;
     if (number > 75) {
@@ -176,7 +181,6 @@ function getColorPrecent(number) {
     }
     return classN;
 }
-
 
 
 function getColorTotalTime(number) {

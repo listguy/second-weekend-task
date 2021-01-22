@@ -10,7 +10,7 @@ body {
 /* css for the table */
 td,
 th {
-  border: 1px solid rgba(190, 190, 190, 0.363);
+  border: 2px solid rgb(27, 71, 107);
   padding: 10px;
   font-weight: bold;
 }
@@ -18,6 +18,11 @@ th {
 td {
   text-align: center;
   border-radius: 10px;
+  transition: all 0.2s ease-in-out;
+}
+td:hover {
+  box-shadow: 0 0 20px rgba(33, 33, 33, 0.822);
+  color: rgb(8, 54, 54);
 }
 
 tr:nth-child(even) {
@@ -36,12 +41,8 @@ th[scope="col"] {
 th[scope="topic"] {
   background-color: #4e5052;
   color: #fff;
-  border: 0.1px solid rgba(128, 128, 128, 0.288);
+  border: 0.1px solid rgb(27, 71, 107);
   border-radius: 10px;
-}
-
-td:hover {
-  cursor: default;
 }
 
 caption {
@@ -51,7 +52,7 @@ caption {
 
 table {
   border-collapse: collapse;
-  border: 2px solid rgb(200, 200, 200);
+  border: 2px solid rgb(27, 71, 107);
   letter-spacing: 1px;
   font-family: sans-serif;
   font-size: 0.8rem;
@@ -94,7 +95,7 @@ table {
   }
   table {
     height: 100vh;
-    width: 440px;
+    width: 100%;
   }
 }
 @media screen and (max-width: 480px) {
