@@ -1,0 +1,17 @@
+#table {
+  display: block;
+  border: 0.3em solid black;
+  padding: 2%;
+  background-color: rgb(241, 224, 201);
+}
+.tableHeader {
+  border: 0.1em solid rgb(199, 101, 35);
+  font-size: 150%;
+}
+.tableBody {
+  border: 0.1em solid rgb(199, 101, 35);
+  width: 100vh;
+  padding: 1%;
+  font-weight: bolder;
+  text-align: center;
+}
