@@ -1,94 +1,94 @@
 //declaration of object
 const myObj = [
     {
-        startedAt: new Date('2021-01-09:09:00'),
-        finishedAt: new Date('2021-01-09:14:00'),
-        tasksGiven: '6',
-        tasksFinished: '5',
-        totalTime: '',
-        tasksFinishedPrecent: '',
-        topic: 'Html'
+        StartedAt: new Date('2021-01-09:09:00'),
+        FinishedAt: new Date('2021-01-09:14:00'),
+        TotalTimeSpent: '',
+        TasksGiven: 6,
+        TasksFinished: 5,
+        TasksFinishedPrecent: '',
+        Topic: 'Html'
     },
     {
-        startedAt: new Date('2021-01-09:09:00'),
-        finishedAt: new Date('2021-01-09:16:00'),
-        tasksGiven: '7',
-        tasksFinished: '4',
-        totalTime: '',
-        tasksFinishedPrecent: '',
-        topic: 'Javascript'
+        StartedAt: new Date('2021-01-09:09:00'),
+        FinishedAt: new Date('2021-01-09:16:00'),
+        TotalTimeSpent: '',
+        TasksGiven: 7,
+        TasksFinished: 4,
+        TasksFinishedPrecent: '',
+        Topic: 'Javascript'
     },
     {
-        startedAt: new Date('2021-01-09:09:00'),
-        finishedAt: new Date('2021-01-09:11:30'),
-        tasksGiven: '9',
-        tasksFinished: '9',
-        totalTime: '',
-        tasksFinishedPrecent: '',
-        topic: 'Css'
+        StartedAt: new Date('2021-01-09:09:00'),
+        FinishedAt: new Date('2021-01-09:11:30'),
+        TotalTimeSpent: '',
+        TasksGiven: 9,
+        TasksFinished: 9,
+        TasksFinishedPrecent: '',
+        Topic: 'Css'
     },
     {
-        startedAt: new Date('2021-01-09:12:30'),
-        finishedAt: new Date('2021-01-09:20:00'),
-        tasksGiven: '5',
-        tasksFinished: '2',
-        totalTime: '',
-        tasksFinishedPrecent: '',
-        topic: 'Array'
+        StartedAt: new Date('2021-01-09:12:30'),
+        FinishedAt: new Date('2021-01-09:20:00'),
+        TotalTimeSpent: '',
+        TasksGiven: 5,
+        TasksFinished: 2,
+        TasksFinishedPrecent: '',
+        Topic: 'Array'
     },
     {
-        startedAt: new Date('2021-01-09:04:00'),
-        finishedAt: new Date('2021-01-09:12:00'),
-        tasksGiven: '6',
-        tasksFinished: '3',
-        totalTime: '',
-        tasksFinishedPrecent: '',
-        topic: 'Function'
+        StartedAt: new Date('2021-01-09:04:00'),
+        FinishedAt: new Date('2021-01-09:12:00'),
+        TotalTimeSpent: '',
+        TasksGiven: 6,
+        TasksFinished: 3,
+        TasksFinishedPrecent: '',
+        Topic: 'Function'
     },
     {
-        startedAt: new Date('2021-01-09:10:00'),
-        finishedAt: new Date('2021-01-09:12:00'),
-        tasksGiven: '6',
-        tasksFinished: '1',
-        totalTime: '',
-        tasksFinishedPrecent: '',
-        topic: 'Object'
+        StartedAt: new Date('2021-01-09:10:00'),
+        FinishedAt: new Date('2021-01-09:12:00'),
+        TotalTimeSpent: '',
+        TasksGiven: 6,
+        TasksFinished: 1,
+        TasksFinishedPrecent: '',
+        Topic: 'Object'
     },
     {
-        startedAt: new Date('2021-01-09:08:30'),
-        finishedAt: new Date('2021-01-09:16:00'),
-        tasksGiven: '4',
-        tasksFinished: '4',
-        totalTime: '',
-        tasksFinishedPrecent: '',
-        topic: 'JSON'
+        StartedAt: new Date('2021-01-09:08:30'),
+        FinishedAt: new Date('2021-01-09:16:00'),
+        TotalTimeSpent: '',
+        TasksGiven: 10,
+        TasksFinished: 8,
+        TasksFinishedPrecent: '',
+        Topic: 'JSON'
     },
     {
-        startedAt: new Date('2021-01-09:13:00'),
-        finishedAt: new Date('2021-01-09:16:00'),
-        tasksGiven: '7',
-        tasksFinished: '5',
-        totalTime: '',
-        tasksFinishedPrecent: '',
-        topic: 'Methods'
+        StartedAt: new Date('2021-01-09:13:00'),
+        FinishedAt: new Date('2021-01-09:16:00'),
+        TotalTimeSpent: '',
+        TasksGiven: 7,
+        TasksFinished: 5,
+        TasksFinishedPrecent: '',
+        Topic: 'VS code'
     },
     {
-        startedAt: new Date('2021-01-09:09:00'),
-        finishedAt: new Date('2021-01-09:15:30'),
-        tasksGiven: '4',
-        tasksFinished: '3',
-        totalTime: '',
-        tasksFinishedPrecent: '',
-        topic: 'Loops'
+        StartedAt: new Date('2021-01-09:09:00'),
+        FinishedAt: new Date('2021-01-09:15:30'),
+        TotalTimeSpent: '',
+        TasksGiven: 4,
+        TasksFinished: 3,
+        TasksFinishedPrecent: '',
+        Topic: 'Loops'
     },
     {
-        startedAt: new Date('2021-01-09:04:00'),
-        finishedAt: new Date('2021-01-09:13:00'),
-        tasksGiven: '3',
-        tasksFinished: '3',
-        totalTime: '',
-        tasksFinishedPrecent: '',
-        topic: 'Github'
+        StartedAt: new Date('2021-01-09:04:00'),
+        FinishedAt: new Date('2021-01-09:13:00'),
+        TotalTimeSpent: '',
+        TasksGiven: 13,
+        TasksFinished: 11,
+        TasksFinishedPrecent: '',
+        Topic: 'Github'
     }
 ];
 
@@ -108,20 +108,20 @@ document.write(`</tr>`);
 for (let obj of myObj) {
 
     //redefines the properties
-    obj.totalTime = diff_hours(obj.startedAt, obj.finishedAt);
-    obj.tasksFinishedPrecent = calculatePrecent(obj.tasksFinished, obj.tasksGiven);
-    obj.startedAt = getTime(obj.startedAt);
-    obj.finishedAt = getTime(obj.finishedAt);
+    obj.TotalTimeSpent = diff_hours(obj.StartedAt, obj.FinishedAt);
+    obj.TasksFinishedPrecent = calculatePrecent(obj.TasksFinished, obj.TasksGiven);
+    obj.StartedAt = getTime(obj.StartedAt);
+    obj.FinishedAt = getTime(obj.FinishedAt);
     
     document.write(`<tr>`);
 
-    // add all the properties to the table   
+    // add all the values to the table   
     const row_values = Object.values(obj);
     index = 0;
     for (let value of row_values) {
         if (index === row_values.length - 1) {
             document.write(`<th scope='topic'>${value}</th>`);
-        }else if (index === 4) {
+        }else if (index === 2) {
             document.write(`<td class=${getColorTotalTime(value)}>${value}</td>`);
         } else if (index === 5) {
             document.write(`<td class=${getColorPrecent(value)}>${value}%</td>`);
