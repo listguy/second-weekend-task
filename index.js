@@ -91,6 +91,39 @@ const myObj = [
     }
 ];
 
+const table_headers = Object.keys(myObj[0]);
+let index;
+// here start the table
+document.write(`<table>`);
+document.write(`<tr>`);
+
+for (let header of table_headers) {
+    document.write(`<th scope='col'>${header} </th>`);
+};
+
+document.write(`</tr>`);
+
+for (let obj of myObj) {
+    obj.totalTime = diff_hours(obj.startedAt, obj.finishedAt);
+    obj.tasksFinishedPrecent = calculatePrecent(obj.tasksFinished, obj.tasksGiven);
+    obj.startedAt = getTime(obj.startedAt);
+    obj.finishedAt = getTime(obj.finishedAt);
+    
+    document.write(`<tr>`);
+    
+    const row_values = Object.values(obj);
+    index = 0;
+    for (let value of row_values) {
+        if (index === row_values.length - 1) {
+            document.write(`<th scope='topic'>${value}</th>`);
+        } else {
+            document.write(`<td>${value}</td>`);
+        }
+        index++
+    }
+    document.write(`</tr>`);
+};
+document.write(`</table>`);
 
 
 function diff_hours(dt1, dt2) {
