@@ -116,6 +116,10 @@ for (let obj of myObj) {
     for (let value of row_values) {
         if (index === row_values.length - 1) {
             document.write(`<th scope='topic'>${value}</th>`);
+        }else if (index === 4) {
+            document.write(`<td class=${getColorTotalTime(value)}>${value}</td>`);
+        } else if (index === 5) {
+            document.write(`<td class=${getColorPrecent(value)}>${value}%</td>`);
         } else {
             document.write(`<td>${value}</td>`);
         }
@@ -124,6 +128,8 @@ for (let obj of myObj) {
     document.write(`</tr>`);
 };
 document.write(`</table>`);
+
+
 
 
 function diff_hours(dt1, dt2) {
@@ -155,3 +161,32 @@ function getTime(date) {
     }
     return hour + ':' + minutes;
 } 
+
+
+
+
+function getColorPrecent(number) {
+    let classN;
+    if (number > 75) {
+        classN = "range75";
+    } else if (number >= 50) {
+        classN = "range50";
+    } else if (number < 50) {
+        classN = "range00"
+    }
+    return classN;
+}
+
+
+
+function getColorTotalTime(number) {
+    let className;
+    if (number > 7) {
+        className = "range7";
+    } else if (number >= 4) {
+        className = "range4";
+    } else if (number < 4) {
+        className = "range0"
+    }
+    return className;
+}
