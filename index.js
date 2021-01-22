@@ -93,3 +93,32 @@ const myObj = [
 
 
 
+function diff_hours(dt1, dt2) {
+    let diff = (dt2.getTime() - dt1.getTime()) / 1000;
+    diff /= (60 * 60);
+    let total = Math.abs(Math.round(diff)); 
+    return total;
+} 
+
+
+
+
+function calculatePrecent(num1, num2) {
+    let precent = Math.floor((num1 / num2) * 100);
+
+    return precent;
+}
+
+
+
+function getTime(date) {
+    let hour = date.getHours();
+    let minutes = date.getMinutes();
+    if (hour < 10) {
+        hour = '0' + hour;
+    }
+    if (minutes < 10) {
+        minutes = '0' + minutes;
+    }
+    return hour + ':' + minutes;
+} 
