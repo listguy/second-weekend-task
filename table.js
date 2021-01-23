@@ -1,144 +1,139 @@
-let work = [];
-work[0]= {
-    topic: 'Topic',
-    startedAt: new Date("2021-01-20:13:00"),
-    finishedAt: new Date("2021-01-20:19:00"),
+let work = [
+work0 = {
+    topic: 'html',
+    startedAt: new Date("2021-01-20:09:00"),
+    finishedAt: new Date("2021-01-20:19:33"),
     tasksGiven: 10,
-    tasksFinished: 7
-};
+    tasksFinished: 3
+},
 
-work[1]= {
-    topic: 'Topic',
-    startedAt: new Date("2021-01-20:13:00"),
-    finishedAt: new Date("2021-01-20:19:00"),
-    tasksGiven: 10,
-    tasksFinished: 7
-};
+work1 = {
+    topic: 'javaScript',
+    startedAt: new Date("2021-01-22:13:00"),
+    finishedAt: new Date("2021-01-22:13:30"),
+    tasksGiven: 15,
+    tasksFinished: 9
+},
 
-work[2]= {
-    topic: 'Topic',
-    startedAt: new Date("2021-01-20:13:00"),
-    finishedAt: new Date("2021-01-20:19:00"),
-    tasksGiven: 10,
-    tasksFinished: 7
-};
+work2 = {
+    topic: 'Css',
+    startedAt: new Date("2021-01-11:13:00"),
+    finishedAt: new Date("2021-01-11:17:00"),
+    tasksGiven: 34,
+    tasksFinished: 15
+},
 
-work[3]= {
-    topic: 'Topic',
-    startedAt: new Date("2021-01-20:13:00"),
-    finishedAt: new Date("2021-01-20:19:00"),
-    tasksGiven: 10,
-    tasksFinished: 7
-};
+work3 = {
+    topic: 'Github',
+    startedAt: new Date("2021-01-23:09:00"),
+    finishedAt: new Date("2021-01-23:10:30"),
+    tasksGiven: 26,
+    tasksFinished: 20
+},
 
-work[4]= {
-    topic: 'Topic',
-    startedAt: new Date("2021-01-20:13:00"),
-    finishedAt: new Date("2021-01-20:19:00"),
-    tasksGiven: 10,
-    tasksFinished: 7
-};
+work4 = {
+    topic: 'more Html',
+    startedAt: new Date("2021-01-12:13:00"),
+    finishedAt: new Date("2021-01-12:16:00"),
+    tasksGiven: 33,
+    tasksFinished: 28
+},
 
-work[5]= {
-    topic: 'Topic',
-    startedAt: new Date("2021-01-20:13:00"),
-    finishedAt: new Date("2021-01-20:19:00"),
-    tasksGiven: 10,
-    tasksFinished: 7
-};
+work5 = {
+    topic: 'Loop',
+    startedAt: new Date("2021-01-13:13:00"),
+    finishedAt: new Date("2021-01-13:19:00"),
+    tasksGiven: 12,
+    tasksFinished: 8
+},
 
-work[6]= {
-    topic: 'Topic',
-    startedAt: new Date("2021-01-20:13:00"),
-    finishedAt: new Date("2021-01-20:19:00"),
-    tasksGiven: 10,
-    tasksFinished: 7
-};
+work6 = {
+    topic: 'Conditions',
+    startedAt: new Date("2021-01-15:10:00"),
+    finishedAt: new Date("2021-01-15:12:00"),
+    tasksGiven: 9,
+    tasksFinished: 2
+},
 
-work[7]= {
-    topic: 'Topic',
-    startedAt: new Date("2021-01-20:13:00"),
-    finishedAt: new Date("2021-01-20:19:00"),
-    tasksGiven: 10,
-    tasksFinished: 7
-};
+work7 = {
+    topic: 'Array',
+    startedAt: new Date("2021-01-30:14:00"),
+    finishedAt: new Date("2021-01-30:19:00"),
+    tasksGiven: 22,
+    tasksFinished: 21
+},
 
-work[8]= {
-    topic: 'Topic',
-    startedAt: new Date("2021-01-20:13:00"),
-    finishedAt: new Date("2021-01-20:19:00"),
-    tasksGiven: 10,
-    tasksFinished: 7
-};
+work8 = {
+    topic: 'Objects',
+    startedAt: new Date("2021-01-11:13:00"),
+    finishedAt: new Date("2021-01-11:16:00"),
+    tasksGiven: 20,
+    tasksFinished: 8
+}];
 
-work[9]= {
-    topic: 'Topic',
-    startedAt: new Date("2021-01-20:13:00"),
-    finishedAt: new Date("2021-01-20:19:00"),
-    tasksGiven: 10,
-    tasksFinished: 7
-};
-
-for(var i = 0; i < work.length; i++){
-    var totalTime =  Math.floor(((work[i].finishedAt - work[i].startedAt) / (1000 * 60 * 60)) % 24);
-    var tasksFinishedPercent = Math.floor(work[i].tasksFinished/work[i].tasksGiven*100);
+for(let i = 0; i < work.length; i++){
+    let totalTime =  Math.floor(((work[i].finishedAt - work[i].startedAt) / (1000 * 60 * 60)));
+    let tasksFinishedPercent = Math.floor(work[i].tasksFinished/work[i].tasksGiven*100);
     Object.assign(work[i], { totalTime: totalTime, tasksFinishedPercent: tasksFinishedPercent });
 }
 
-let headers = ["Topic", "Started At", "Finished At", "Total Time Spent", "Tasks Given", "Tasks Finished", "Tasks Finished %"];    
+let headers = ["Topic", "Started At", "Finished At",  "Tasks Given", "Tasks Finished", "Total Time Spent","Tasks Finished %"];
 
-function generateTableHead(table, headers) {
-    let thead = table.createTHead();
-    let row = thead.insertRow();
-    for (var h = 0; h < headers.length; h++) 
-    {
-      let th = document.createElement("th");
-      let text = document.createTextNode(headers[h]);
-      th.appendChild(text);
-      row.appendChild(th);
+function formatHoursMinutes(input) {
+    var date = new Date(Date.parse(input));
+    let hours = date.getHours();
+    let minutes = date.getMinutes();
+    return hours + ':' + ("0" + minutes).slice(-2);
+}
+
+function generateTableHead(headers) {
+    let tableHead = "";
+    for (let h = 0; h < headers.length; h++) 
+    { 
+      let th = `<th>${headers[h]}</th>`;
+      tableHead += th;
     }
-  }
+    return tableHead;
+}
 
-  function generateTable(table, data) {
-    for (let element of data) {
-      let row = table.insertRow();
-      let topicCell = row.insertCell();
-      topicCell.innerHTML = element.topic;
-      let startedCell = row.insertCell();
-      startedCell.innerHTML = element.startedAt.getHours();
-      let finishedCell = row.insertCell();
-      finishedCell.innerHTML = element.finishedAt.getHours();
-      let totalTimeCell = row.insertCell();
-      //set colour of cell based on value
-      let colorValue1 = "green";
-      if (element.totalTime > 2){
-        colorValue1 = "orange";
-      }
-      if (element.totalTime > 5){
-        colorValue1 = "red";
-      }
-    
-      totalTimeCell.style.backgroundColor = colorValue1;
-      totalTimeCell.innerHTML = element.totalTime;
-      let tasksGivenCell = row.insertCell();
-      tasksGivenCell.innerHTML = element.tasksGiven;
-      let tasksFinishedCell = row.insertCell();
-      tasksFinishedCell.innerHTML = element.tasksFinished;
-      let tasksFinishedPercentCell = row.insertCell();
-      //set colour of cell based on value
-      let colorValue2 = "light blue";
-      if (element.taskFinishedPercent > 50){
-          colorValue2 = "blue";
-      }
-      if (element.taskFinishedPercent >= 75){
-          colorValue2 = "deep blue";
-      }
-      tasksFinishedPercentCell.style.backgroundColor = colorValue2;
-      tasksFinishedPercentCell.innerHTML = element.tasksFinishedPercent + '%';
-    }
-  }
+  function generateTable(work) {
+    let rowsContent = "";
+    for (let data of work) {
+      rowsContent += "<tr>";
+        for (let element in data) {
+            let format = "";
+            switch (element) {
+                case 'startedAt':
+                case 'finishedAt':
+                data[element] = formatHoursMinutes(data[element]);
+                break;
+                case 'totalTime':
+                format = "green";
+                if (data[element] > 2 ){
+                    format = "orange";
+                }
+                if (data[element] >= 5) {
+                    format = "red";
+                }    
+                break;
+                case 'tasksFinishedPercent':
+                format = "LightCyan";
+                if (data[element] > 50 ) {
+                    format = "lightSkyBlue";
+                }
+                if (data[element] >= 75 ) {
+                    format = "royalBlue";
+                }
+                break;
+            }
+            rowsContent  += `<td style="background-color:` + format + `">${data[element]}</td>`;
+            format = "";
+        }
+        rowsContent += "</tr>";
+     }
+    return rowsContent;
+}
+  
 
-var table = document.createElement("table");
-generateTableHead(table, headers);
-generateTable(table, work);
-document.body.appendChild(table);
+document.write(`<table>${generateTableHead(headers) + generateTable(work)}</table>`);
+console.log(generateTable(work));
