@@ -70,7 +70,7 @@ for (const task of tasks) {
             let h = addZero(task[i].getHours());
             let m = addZero(task[i].getMinutes());
             tdTable.setAttribute ('class', 'tableBody');
-            tdTable.textContent = (`${task[i]}`);
+            tdTable.textContent = (`${h} : ${m}`);
         } else { 
             if (i === 'totalTime') {
                 if (task[i] <= 25) {
