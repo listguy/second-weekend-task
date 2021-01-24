@@ -91,51 +91,63 @@ const myObj = [
         Topic: 'Github'
     }
 ];
-
 const table_headers = Object.keys(myObj[0]);
 let index;
 
 // here start the table section
-document.write(`<table>`);
-document.write(`<tr>`);
-
+const table = document.createElement('table');
+let tr = document.createElement('tr');
 // add all the headers to the table
 for (let header of table_headers) {
-    document.write(`<th scope='col'>${header} </th>`);
+    
+    let th = document.createElement('th');
+    th.classList.add('col');
+    th.innerHTML = header;
+    tr.append(th);
+    table.appendChild(tr);
 };
-document.write(`</tr>`);
 
 for (let obj of myObj) {
-
     //redefines the properties
     obj.TotalTimeSpent = diff_hours(obj.StartedAt, obj.FinishedAt);
     obj.TasksFinishedPrecent = calculatePrecent(obj.TasksFinished, obj.TasksGiven);
     obj.StartedAt = getTime(obj.StartedAt);
     obj.FinishedAt = getTime(obj.FinishedAt);
-    
-    document.write(`<tr>`);
 
     // add all the values to the table   
     const row_values = Object.values(obj);
     index = 0;
+    let tr2 = document.createElement('tr');
     for (let value of row_values) {
+        
         if (index === row_values.length - 1) {
-            document.write(`<th scope='topic'>${value}</th>`);
-        }else if (index === 2) {
-            document.write(`<td class=${getColorTotalTime(value)}>${value}</td>`);
+            let th = document.createElement('th');
+            th.classList.add('topic');
+            th.innerHTML = value;
+            tr2.append(th);
+            table.appendChild(tr2);
+        } else if (index === 2) {
+            let td = document.createElement('td');
+            td.classList.add(getColorTotalTime(value));
+            td.innerHTML = value;
+            tr2.append(td);
+            table.appendChild(tr2);
         } else if (index === 5) {
-            document.write(`<td class=${getColorPrecent(value)}>${value}%</td>`);
+            let td = document.createElement('td');
+            td.classList.add(getColorPrecent(value));
+            td.innerHTML = value;
+            tr2.append(td);
+            table.appendChild(tr2);
         } else {
-            document.write(`<td>${value}</td>`);
+            let td = document.createElement('td');
+            td.innerHTML = value;
+            tr2.append(td);
+            table.appendChild(tr2);
         }
         index++
     }
-    document.write(`</tr>`);
 };
-document.write(`</table>`);
-
-
-
+document.body.append(table);
 // function to get the difference between the hours
 function diff_hours(dt1, dt2) {
     let diff = (dt2.getTime() - dt1.getTime()) / 1000;
@@ -143,16 +155,12 @@ function diff_hours(dt1, dt2) {
     let total = Math.abs(diff); 
     return total;
 } 
-
-
-
 //function to get precent of the tesks finished
 function calculatePrecent(num1, num2) {
     let precent = Math.floor((num1 / num2) * 100);
 
     return precent;
 }
-
 
 // function to get the full time (00:00)
 function getTime(date) {
@@ -167,8 +175,6 @@ function getTime(date) {
     return hour + ':' + minutes;
 } 
 
-
-
 //functions for changing color by value
 function getColorPrecent(number) {
     let classN;
@@ -181,7 +187,6 @@ function getColorPrecent(number) {
     }
     return classN;
 }
-
 
 function getColorTotalTime(number) {
     let className;

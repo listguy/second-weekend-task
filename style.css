@@ -13,9 +13,6 @@ th {
   border: 2px solid rgb(27, 71, 107);
   padding: 10px;
   font-weight: bold;
-}
-
-td {
   text-align: center;
   border-radius: 10px;
   transition: all 0.2s ease-in-out;
@@ -32,13 +29,13 @@ tr {
   background-color: rgba(238, 231, 231, 0.856);
 }
 
-th[scope="col"] {
+th .col {
   background-color: #383535;
   color: #fff;
   border-radius: 10px;
 }
 
-th[scope="topic"] {
+th .topic {
   background-color: #4e5052;
   color: #fff;
   border: 0.1px solid rgb(27, 71, 107);
@@ -51,7 +48,7 @@ caption {
 }
 
 table {
-  border-collapse: collapse;
+  border-collapse: separate;
   border: 2px solid rgb(27, 71, 107);
   letter-spacing: 1px;
   font-family: sans-serif;
