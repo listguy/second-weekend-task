@@ -1,10 +1,10 @@
 const tasks = [
     { topic: 'HTML', startedAt: new Date("2021-01-20 12:00") , finishAt: new Date("2021-01-21 13:30") , tasksGiven: 20, taskFinished: 18},
     { topic: 'CSS', startedAt: new Date("2021-01-20 9:00") , finishAt: new Date("2021-01-21 9:00") , tasksGiven: 20, taskFinished: 15},
-    { topic: 'JS', startedAt: new Date("2021-01-19 8:00") , finishAt: new Date("2021-01-21 11:20") , tasksGiven: 22, taskFinished: 18},
-    { topic: 'FUNCTION', startedAt: new Date("2021-01-21 12:40") , finishAt: new Date("2021-01-23 18:50") , tasksGiven: 10, taskFinished: 9},
+    { topic: 'JS', startedAt: new Date("2021-01-19 7:50") , finishAt: new Date("2021-01-21 11:20") , tasksGiven: 22, taskFinished: 18},
+    { topic: 'FUNCTION', startedAt: new Date("2021-01-21 12:20") , finishAt: new Date("2021-01-23 18:50") , tasksGiven: 10, taskFinished: 9},
     { topic: 'TEST', startedAt: new Date("2021-01-01 9:30") , finishAt: new Date("2021-01-03 12:00") , tasksGiven: 15, taskFinished: 12},
-    { topic: 'LOOPS', startedAt: new Date("2021-01-17 9:50") , finishAt: new Date("2021-01-19 13:20") , tasksGiven: 20, taskFinished: 18},
+    { topic: 'LOOPS', startedAt: new Date("2021-01-17 8:50") , finishAt: new Date("2021-01-19 13:20") , tasksGiven: 20, taskFinished: 18},
     { topic: 'ARRAYS', startedAt: new Date("2021-01-25 18:30") , finishAt: new Date("2021-01-26 9:00") , tasksGiven: 10, taskFinished: 7},
     { topic: 'DOM', startedAt: new Date("2021-01-21 6:00") , finishAt: new Date("2021-01-26 9:00") , tasksGiven: 25, taskFinished: 25},
     { topic: 'FCC', startedAt: new Date("2021-01-28 17:00") , finishAt: new Date("2021-01-28 19:00") , tasksGiven: 19, taskFinished: 18},
@@ -70,7 +70,7 @@ for (const task of tasks) {
             let h = addZero(task[i].getHours());
             let m = addZero(task[i].getMinutes());
             tdTable.setAttribute ('class', 'tableBody');
-            tdTable.textContent = (`${h} : ${m}`);
+            tdTable.textContent = (`${task[i]}`);
         } else { 
             if (i === 'totalTime') {
                 if (task[i] <= 25) {
