@@ -55,9 +55,8 @@ for (const head of header) {
     tableHeader.setAttribute('class', 'tableHeader');
     trHead.appendChild(tableHeader);
     tableHeader.textContent = head;
-    
-    // document.write('<th class = "tableHeader">  ' + head + '</th>');
 }
+
 // start build the body of the table
 
 
@@ -72,26 +71,22 @@ for (const task of tasks) {
             let m = addZero(task[i].getMinutes());
             tdTable.setAttribute ('class', 'tableBody');
             tdTable.textContent = (`${h} : ${m}`);
-            // document.write(`<td class = "tableBody"> ${h} : ${m} </td>`)
         } else { 
             if (i === 'totalTime') {
                 if (task[i] <= 25) {
                     // light green
                     tdTable.setAttribute ('class', 'totalTimeLow');
                     tdTable.textContent = (`${task[i]}`);
-                    // document.write(`<td class = "totalTimeLow"> ${task[i]} </td>`);
                 }
                 if ((task[i] > 25) && (task[i] <= 55)) {
                     //green
                     tdTable.setAttribute ('class', 'totalTimeMedium');
                     tdTable.textContent = (`${task[i]}`);
-                    // document.write(`<td class = "totalTimeMedium"> ${task[i]} </td>`);
                 }
                 if (task[i] > 55) {
                     //dark green
                     tdTable.setAttribute ('class', 'totalTimeHigh');
                     tdTable.textContent = (`${task[i]}`);
-                    // document.write(`<td class = "totalTimeHigh"> ${task[i]} </td>`);
                 }
             } else {
                 if (i === 'tasksPercent') {
@@ -99,24 +94,20 @@ for (const task of tasks) {
                         //pink
                         tdTable.setAttribute ('class', 'taskPercentLow');
                         tdTable.textContent = (`${task[i]}`);
-                        // document.write(`<td class = "taskPercentLow"> ${task[i]} </td>`)
                     }   
                     if (parseInt(task[i]) >= 80 && parseInt(task[i]) < 90) {
                         //dark pink
                         tdTable.setAttribute ('class', 'taskPercentMedium');
                         tdTable.textContent = (`${task[i]}`);
-                        // document.write(`<td class = "taskPercentMedium"> ${task[i]} </td>`)
                     }   
                     if (parseInt(task[i]) >= 90) {
                         //purple
                         tdTable.setAttribute ('class', 'taskPercentHigh');
                         tdTable.textContent = (`${task[i]}`);
-                        // document.write(`<td class = "taskPercentHigh"> ${task[i]} </td>`)
                     }   
                 } else {
                         tdTable.setAttribute ('class', 'tableBody');
                         tdTable.textContent = (`${task[i]}`);
-                    // document.write(`<td class = "tableBody"> ${task[i]} </td>`);
                 }
             }
         }
