@@ -1,0 +1,90 @@
+body {
+  background: rgb(27, 71, 107);
+  background: linear-gradient(
+    90deg,
+    rgba(24, 68, 104, 0.793) 9%,
+    rgba(32, 21, 89, 0.8015581232492998) 49%,
+    rgba(32, 45, 129, 0.742734593837535) 85%
+  );
+}
+/* css for the table */
+td,
+th {
+  border: 2px solid rgb(27, 71, 107);
+  padding: 10px;
+  font-weight: bold;
+  text-align: center;
+  border-radius: 10px;
+  transition: all 0.2s ease-in-out;
+}
+td:hover {
+  box-shadow: 0 0 20px rgba(33, 33, 33, 0.822);
+  color: rgb(8, 54, 54);
+}
+
+tr:nth-child(even) {
+  background-color: #eee;
+}
+tr {
+  background-color: rgba(238, 231, 231, 0.856);
+}
+
+table {
+  border-collapse: separate;
+  border: 2px solid rgb(27, 71, 107);
+  letter-spacing: 1px;
+  font-family: sans-serif;
+  font-size: 0.8rem;
+  width: 100%;
+  height: 100vh;
+}
+/* add color to the table */
+.range0 {
+  background-color: rgb(38, 189, 38);
+}
+.range4 {
+  background-color: rgb(255, 140, 0);
+}
+.range7 {
+  background-color: rgb(255, 60, 0);
+}
+.range75 {
+  background-color: rgba(22, 69, 168, 0.747);
+}
+.range50 {
+  background-color: rgba(69, 148, 194, 0.747);
+}
+.range00 {
+  background-color: rgba(35, 207, 219, 0.747);
+}
+/* media query */
+@media screen and (max-width: 960px) {
+  body {
+    width: 758px;
+    overflow: hidden;
+  }
+  table {
+    width: 100%;
+    height: 100vh;
+  }
+}
+@media screen and (max-width: 758px) {
+  body {
+    width: 100%;
+  }
+  table {
+    height: 100vh;
+    width: 100%;
+  }
+}
+@media screen and (max-width: 480px) {
+  body {
+    max-width: 480px;
+    width: auto;
+    margin: 20px;
+  }
+  table {
+    width: 92%;
+    padding: 4%;
+  }
+}
