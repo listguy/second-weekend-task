@@ -29,24 +29,6 @@ tr {
   background-color: rgba(238, 231, 231, 0.856);
 }
 
-th .col {
-  background-color: #383535;
-  color: #fff;
-  border-radius: 10px;
-}
-
-th .topic {
-  background-color: #4e5052;
-  color: #fff;
-  border: 0.1px solid rgb(27, 71, 107);
-  border-radius: 10px;
-}
-
-caption {
-  padding: 10px;
-  caption-side: bottom;
-}
-
 table {
   border-collapse: separate;
   border: 2px solid rgb(27, 71, 107);

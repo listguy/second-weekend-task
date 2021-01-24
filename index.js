@@ -99,9 +99,9 @@ const table = document.createElement('table');
 let tr = document.createElement('tr');
 // add all the headers to the table
 for (let header of table_headers) {
-    
     let th = document.createElement('th');
     th.classList.add('col');
+    th.style = 'background-Color: #383535; color: #fff';
     th.innerHTML = header;
     tr.append(th);
     table.appendChild(tr);
@@ -123,6 +123,7 @@ for (let obj of myObj) {
         if (index === row_values.length - 1) {
             let th = document.createElement('th');
             th.classList.add('topic');
+            th.style = 'background-Color: #4e5052; color: #fff';
             th.innerHTML = value;
             tr2.append(th);
             table.appendChild(tr2);
