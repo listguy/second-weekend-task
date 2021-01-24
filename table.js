@@ -87,19 +87,23 @@ function formatHoursMinutes(input) {
 }
 
 function generateTableHead(headers) {
-    let tableHead = "";
+    const body = document.body;
+    let table = document.createElement("table");
+    //let tableHead;
     for (let h = 0; h < headers.length; h++) 
     { 
-      let th = `<th>${headers[h]}</th>`;
-      tableHead += th;
+        let th = document.createElement('th');
+        th.innerText = headers[h];
+        table.append(th);
     }
-    return tableHead;
+    body.append(table);
+    return true;
 }
 
-  function generateTable(work) {
-    let rowsContent = "";
+function generateTable(work) {
+    let table = document.querySelector("table");
     for (let data of work) {
-      rowsContent += "<tr>";
+        let tr = document.createElement("tr");
         for (let element in data) {
             let format = "";
             switch (element) {
@@ -126,14 +130,17 @@ function generateTableHead(headers) {
                 }
                 break;
             }
-            rowsContent  += `<td style="background-color:` + format + `">${data[element]}</td>`;
+            let td = document.createElement("td");
+            td.innerText = data[element];
+            td.style.backgroundColor = format;
+            tr.append(td);
             format = "";
         }
-        rowsContent += "</tr>";
+        table.append(tr);
      }
-    return rowsContent;
+    return true;
 }
   
 
-document.write(`<table>${generateTableHead(headers) + generateTable(work)}</table>`);
-console.log(generateTable(work));
+generateTableHead(headers);
+generateTable(work);
